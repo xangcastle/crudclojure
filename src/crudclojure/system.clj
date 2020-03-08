@@ -17,7 +17,7 @@
          :store (store/make-store))
         (component/system-using {:server [:store]}))
     (catch Exception e
-      (error "Failed to build system" e))))
+      (error "Error al arrancar el sistema." e))))
 
 (defn init-system
   []
@@ -33,4 +33,5 @@
   "Arrancar el sistema."
   []
   (alter-var-root #'system component/start-system)
-  (println "Sistema iniciado"))
+  (println "Sistema iniciado")
+  (println "http://localhost:8080/"))
